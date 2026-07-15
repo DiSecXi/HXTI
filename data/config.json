@@ -14,11 +14,11 @@
     "fallbackThreshold": 60
   },
   "display": {
-    "title": "KYTI 人格测试",
-    "subtitle": "如果你也不理解MBTI在测啥，不如来测一下KYTI。",
-    "author": "基于 B站UP主@蛆肉儿串儿 的原创测试 及 GitHub user pingfan 的 SBTI 的开源项目，本项目作者：DiSecXi (Xi YN)（B站UP主@DiSecXi (UID 1312790)）",
-    "funNote": "有关材料学、电化学、量子化学实验手段与计算相关文章、专利指导需求 请联系B站UP主 DiSecXi (UID 1312790)",
-    "funNoteSpecial": "本测试仅供娱乐。存在隐藏人格，但我希望你测不出来。"
+    "title": "海克斯科技_科研民工_人格测试",
+    "subtitle": "MBTI可能测不准，但心之钢一定叠得狠。",
+    "author": "Xi YN (AKA DiSecXi)（B站UP主@DiSecXi (UID 1312790)）",
+    "funNote": "量子化学计算与文章专利指导 请联系B站UP主 DiSecXi (UID 1312790)",
+    "funNoteSpecial": "中科院计算团队提供技术支持"
   },
   "drinkGate": {
     "questionId": "drink_gate_q1",
