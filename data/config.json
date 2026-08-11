@@ -14,11 +14,11 @@
     "fallbackThreshold": 60
   },
   "display": {
-    "title": "海克斯科技_科研民工_人格测试",
-    "subtitle": "MBTI可能测不准，但心之钢一定叠得狠。",
-    "author": "Xi YN (AKA DiSecXi)（B站UP主@DiSecXi (UID 1312790)）",
-    "funNote": "量子化学计算与文章专利指导 请联系B站UP主 DiSecXi (UID 1312790)",
-    "funNoteSpecial": "中科院计算团队提供技术支持"
+    "title": "海克斯科技_人格测试",
+    "subtitle": "科研不是人生全部，累了就当叠心之钢",
+    "author": "夏洛克量化（B站UP主@夏洛克量化 (UID 3707036038596736)）",
+    "funNote": "量子化学计算与文章专利辅助 请联系B站UP主@夏洛克量化 (UID 3707036038596736)，或添加微信：Quantum_Chemistry_SH",
+    "funNoteSpecial": "中科院团队提供技术支持"
   },
   "drinkGate": {
     "questionId": "drink_gate_q1",

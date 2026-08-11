@@ -73,9 +73,7 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
 
 
 
-  // 免责声明
-  document.getElementById('disclaimer').textContent =
-    mode === 'normal' ? config.display.funNote : config.display.funNoteSpecial
+    // 免责声明已改为 HTML 静态内容，无需 JS 写入
 
 
 

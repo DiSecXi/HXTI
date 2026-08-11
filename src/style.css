@@ -256,6 +256,7 @@ body {
   text-align: left;
   line-height: 1.8;
   margin-bottom: 28px;
+  text-indent: 2em;   /* ← 加这一行：首行缩进 2 个汉字宽度 */
 }
 
 .result-secondary {
@@ -397,7 +398,7 @@ body {
   font-size: 0.8rem;
   color: var(--text-secondary);
   line-height: 1.5;
-  text-align: left;
+  text-align: center;
 }
 
 /* ========== Result Actions ========== */
@@ -479,4 +480,169 @@ body {
   border-radius: 12px;
   margin: 16px auto;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ========== Quiz Navigation ========== */
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* 统一覆盖上一题/下一题的样式，确保两者完全一样大、一样颜色 */
+.quiz-nav .btn {
+  flex: 0 0 auto;              /* 不拉伸也不收缩 */
+  width: calc(50% - 6px);      /* 固定半宽，减去 gap 的一半 */
+  margin-top: 0;
+  display: block;
+  text-align: center;
+  padding: 14px 18px;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font);
+}
+
+.quiz-nav .btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.quiz-nav .btn:active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* 选项选中状态（回退时高亮之前的选择）— 强制覆盖所有其他状态 */
+.btn-option.selected {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+}
+
+/* ========== Share Page ========== */
+.share-card {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.share-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.share-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+.share-preview {
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  margin-bottom: 28px;
+  border: 1.5px solid var(--border);
+}
+
+.share-code {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.share-name {
+  font-size: 1.2rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.share-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-actions .btn {
+  margin-top: 0;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.btn-text:hover {
+  color: var(--accent);
+}
+
+/* ========== Share QR Section ========== */
+.share-section {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.contact-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  text-align: center;           /* 文字强制居中 */
+}
+
+.share-thanks {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.qr-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.qr-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-img {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.qr-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  word-break: break-all;
+  max-width: 220px;
 }
