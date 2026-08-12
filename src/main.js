@@ -89,13 +89,11 @@ async function init() {
   }
   
   document.getElementById('btn-start').addEventListener('click', () => {
-    ding()
     quiz.start()
     showPage('quiz')
   })
 
   document.getElementById('btn-restart').addEventListener('click', () => {
-    ding()
     quiz.start()
     showPage('intro')
   })
