@@ -42,10 +42,10 @@ async function init() {
   const xzgAudio = new Audio(`${import.meta.env.BASE_URL}audio/xinzhigang.mp3`)
   xzgAudio.preload = 'auto'
 
-    // 叠钢计数器
+  // [修复] 补回缺失的三个变量声明
   let xzgCount = 0
-  const countEl = document.getElementById('xzg-count')
-  const titleEl = document.getElementById('xzg-title')
+  const countEls = document.querySelectorAll('.xzg-count')
+  const titleEls = document.querySelectorAll('.xzg-title')
 
   const xzgTitles = {
     1: 'First Blood',
@@ -58,36 +58,45 @@ async function init() {
     8: 'Octa Kill',
     9: 'Nona Kill',
     10: 'Deca Kill',
-    100: '百炼成钢！',
-    1000: '千锤百炼！！',
-    10000: '万钢归宗！！！',
-    100000: '钢之炼金术师（您就是钢神）',
+  }
+
+  function getXzgTitle(count) {
+    if (count >= 100000) return '钢之炼金术师（您就是钢神）'
+    if (count >= 10000) return '万钢归宗！！！'
+    if (count >= 1000) return '千锤百炼！！'
+    if (count >= 150) return '还在杀？'
+    if (count >= 101) return '乱杀'
+    if (count >= 100) return '百炼成钢！'
+    if (count >= 91) return '杀疯了'
+    if (count >= 81) return '杀神'
+    if (count >= 71) return '超凡入圣'
+    if (count >= 61) return '封神'
+    if (count >= 51) return '超神'
+    if (count >= 41) return '接近神了'
+    if (count >= 31) return '主宰'
+    if (count >= 21) return '无人可挡'
+    if (count >= 11) return '暴走'
+    return xzgTitles[count] || null
   }
 
   function ding() {
-    // 克隆音频实例，每次点击都是全新的，互不干扰，连点也能立刻响
     const clone = xzgAudio.cloneNode()
     clone.play().catch(() => {})
 
     xzgCount++
-    if (countEl) countEl.textContent = xzgCount
+    countEls.forEach(el => el.textContent = xzgCount)
 
-        // 彩蛋称号
-    if (titleEl) {
-      let title = xzgTitles[xzgCount]
-      // 11-99 之间显示乱杀
-      if (!title && xzgCount >= 11 && xzgCount <= 99) {
-        title = '乱杀'
-      }
-      if (title) {
-        titleEl.textContent = `· ${title}`
-        titleEl.style.animation = 'none'
-        titleEl.offsetHeight // 强制重绘
-        titleEl.style.animation = 'popIn 0.4s ease'
-      }
+    const title = getXzgTitle(xzgCount)
+    if (title) {
+      titleEls.forEach(el => {
+        el.textContent = `· ${title}`
+        el.style.animation = 'none'
+        el.offsetHeight
+        el.style.animation = 'popIn 0.4s ease'
+      })
     }
   }
-  
+
   document.getElementById('btn-start').addEventListener('click', () => {
     quiz.start()
     showPage('quiz')

@@ -683,11 +683,11 @@ body {
 .xzg-count-label {
   margin-top: 8px;
   font-size: 0.9rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: var(--text);        /* 从灰色改成正文深色 */
+  font-weight: 700;          /* 整行加粗，和称号一致 */
 }
 
-#xzg-count {
+.xzg-count {
   color: var(--accent);
   font-weight: 700;
   font-size: 1.1rem;
