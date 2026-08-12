@@ -707,3 +707,9 @@ body {
   60% { transform: scale(1.2); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+/* 禁用双击缩放，消除点击高亮 */
+* {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
