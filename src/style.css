@@ -692,3 +692,18 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
 }
+
+/* ========== 叠钢称号彩蛋 ========== */
+.xzg-title {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-left: 4px;
+  display: inline-block;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}

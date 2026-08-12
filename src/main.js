@@ -42,17 +42,52 @@ async function init() {
   const xzgAudio = new Audio(`${import.meta.env.BASE_URL}audio/xinzhigang.mp3`)
   xzgAudio.preload = 'auto'
 
-  // 叠钢计数器
+    // 叠钢计数器
   let xzgCount = 0
   const countEl = document.getElementById('xzg-count')
+  const titleEl = document.getElementById('xzg-title')
 
-  function ding() {
-    xzgAudio.currentTime = 0
-    xzgAudio.play().catch(() => {})
-    xzgCount++
-    if (countEl) countEl.textContent = xzgCount
+  const xzgTitles = {
+    1: 'First Blood',
+    2: 'Double Kill',
+    3: 'Triple Kill',
+    4: 'Quadra Kill',
+    5: 'Penta Kill',
+    6: 'Hexa Kill',
+    7: 'Hepta Kill',
+    8: 'Octa Kill',
+    9: 'Nona Kill',
+    10: 'Deca Kill',
+    100: '百炼成钢！',
+    1000: '千锤百炼！！',
+    10000: '万钢归宗！！！',
+    100000: '钢之炼金术师（您就是钢神）',
   }
 
+  function ding() {
+    // 克隆音频实例，每次点击都是全新的，互不干扰，连点也能立刻响
+    const clone = xzgAudio.cloneNode()
+    clone.play().catch(() => {})
+
+    xzgCount++
+    if (countEl) countEl.textContent = xzgCount
+
+        // 彩蛋称号
+    if (titleEl) {
+      let title = xzgTitles[xzgCount]
+      // 11-99 之间显示乱杀
+      if (!title && xzgCount >= 11 && xzgCount <= 99) {
+        title = '乱杀'
+      }
+      if (title) {
+        titleEl.textContent = `· ${title}`
+        titleEl.style.animation = 'none'
+        titleEl.offsetHeight // 强制重绘
+        titleEl.style.animation = 'popIn 0.4s ease'
+      }
+    }
+  }
+  
   document.getElementById('btn-start').addEventListener('click', () => {
     ding()
     quiz.start()
