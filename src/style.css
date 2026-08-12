@@ -475,7 +475,7 @@ body {
 }
 .result-image {
   display: block;
-  max-width: 80%;
+  max-width: 50%;
   height: auto;
   border-radius: 12px;
   margin: 16px auto;
