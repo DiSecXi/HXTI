@@ -38,15 +38,44 @@ async function init() {
 
   const quiz = createQuiz(questions, config, onQuizComplete)
 
+  // 创建音频对象（所有按钮共用）
+  const xzgAudio = new Audio(`${import.meta.env.BASE_URL}audio/xinzhigang.mp3`)
+  xzgAudio.preload = 'auto'
+
+  // 叠钢计数器
+  let xzgCount = 0
+  const countEl = document.getElementById('xzg-count')
+
+  function ding() {
+    xzgAudio.currentTime = 0
+    xzgAudio.play().catch(() => {})
+    xzgCount++
+    if (countEl) countEl.textContent = xzgCount
+  }
+
   document.getElementById('btn-start').addEventListener('click', () => {
+    ding()
     quiz.start()
     showPage('quiz')
   })
 
   document.getElementById('btn-restart').addEventListener('click', () => {
+    ding()
     quiz.start()
-    showPage('quiz')
+    showPage('intro')
   })
+
+  // 首页心之钢图标按钮
+  const xzgBtn = document.getElementById('btn-xinzhigang')
+  if (xzgBtn) {
+    xzgBtn.addEventListener('click', ding)
+  }
+
+  // 结果页心之钢图标按钮
+  const xzgBtnResult = document.getElementById('btn-xinzhigang-result')
+  if (xzgBtnResult) {
+    xzgBtnResult.addEventListener('click', ding)
+  }
 }
 
 init()
