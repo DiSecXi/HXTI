@@ -160,27 +160,32 @@ body {
   font-weight: 400;
   line-height: 1.5;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;          /* 过渡 150ms，点击有停留感 */
   font-family: var(--font);
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* 未选中时的 hover */
 .btn-option:hover {
-  border-color: var(--hex-gold);
-  background: rgba(245, 158, 11, 0.05);
-  color: var(--hex-orange);
-}
-
-.btn-option:active {
-  background: var(--hex-purple);
-  color: #fff;
-  border-color: var(--hex-purple);
-}
-
-.btn-option.selected {
-  background: var(--hex-purple);      /* ← 选中背景：海克斯紫色 */
-  color: #fff;
   border-color: var(--hex-silver);
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--hex-green);
+}
+
+/* 点击瞬间反馈 */
+.btn-option:active {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--hex-green);
+  border-color: var(--hex-silver);
+}
+
+/* 选中状态：银白边框 + 紫色背景，且强制覆盖 hover/active */
+.btn-option.selected,
+.btn-option.selected:hover,
+.btn-option.selected:active {
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--hex-green);
+  border-color: var(--hex-silver);
 }
 
 /* ========== Quiz ========== */
