@@ -48,11 +48,11 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
   }
 
   // 雷达图
-  const canvas = document.getElementById('radar-chart')
-  drawRadar(canvas, userLevels, dimOrder, dimDefs)
+  /*const canvas = document.getElementById('radar-chart')
+  drawRadar(canvas, userLevels, dimOrder, dimDefs)*/
 
   // 维度详情
-  const detailEl = document.getElementById('dimensions-detail')
+  /*const detailEl = document.getElementById('dimensions-detail')
   detailEl.innerHTML = ''
   for (const dim of dimOrder) {
     const level = userLevels[dim] || 'M'
@@ -69,13 +69,7 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
       <div class="dim-desc">${def.levels[level]}</div>
     `
     detailEl.appendChild(row)
-  }
-
-
-
-    // 免责声明已改为 HTML 静态内容，无需 JS 写入
-
-
+  }*/
 
   // 复制 AI Agent 命令
   const btnAgent = document.getElementById('btn-agent')
