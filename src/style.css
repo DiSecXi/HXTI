@@ -136,10 +136,12 @@ body {
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
 }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    transform: translateY(-1px);
+  }
 }
 
 .btn-primary:active {
@@ -166,10 +168,12 @@ body {
 }
 
 /* 未选中时的 hover */
-.btn-option:hover {
-  border-color: var(--hex-silver);
-  background: rgba(168, 85, 247, 0.15);
-  color: var(--hex-green);
+@media (hover: hover) and (pointer: fine) {
+  .btn-option:hover {
+    border-color: var(--hex-silver);
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--hex-green);
+  }
 }
 
 /* 点击瞬间反馈 */
@@ -255,10 +259,12 @@ body {
   font-family: var(--font);
 }
 
-.quiz-nav .btn:hover {
-  border-color: var(--hex-gold);
-  background: rgba(245, 158, 11, 0.05);
-  color: var(--hex-gold);
+@media (hover: hover) and (pointer: fine) {
+  .quiz-nav .btn:hover {
+    border-color: var(--hex-gold);
+    background: rgba(245, 158, 11, 0.05);
+    color: var(--hex-gold);
+  }
 }
 
 .quiz-nav .btn:active {
@@ -404,8 +410,10 @@ body {
   font-size: 0.85rem;
 }
 
-.btn-agent:hover {
-  background: #2a2a2a;
+@media (hover: hover) and (pointer: fine) {
+  .btn-agent:hover {
+    background: #2a2a2a;
+  }
 }
 
 .agent-hint {
@@ -521,8 +529,10 @@ a {
   color: var(--hex-orange);
 }
 
-a:hover {
-  color: var(--hex-gold);
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--hex-gold);
+  }
 }
 
 /* ========== Mobile ========== */
@@ -548,4 +558,12 @@ a:hover {
   border-radius: 12px;
   margin: 16px auto;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.result-waiting {
+  font-size: 0.9rem;
+  color: var(--hex-silver);
+  text-align: center;
+  margin-top: 12px;
+  letter-spacing: 0.05em;
 }

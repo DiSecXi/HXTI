@@ -26,7 +26,18 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
 
   // Intro & 描述
   document.getElementById('result-intro').textContent = primary.intro || ''
-  document.getElementById('result-desc').textContent = primary.desc || ''
+  const descEl = document.getElementById('result-desc')
+  descEl.textContent = primary.desc || ''
+
+  // 先移除旧字幕（防止重复叠加）
+  const oldWaiting = document.querySelector('.result-waiting')
+  if (oldWaiting) oldWaiting.remove()
+
+  const waitingEl = document.createElement('p')
+  waitingEl.className = 'result-waiting'
+  waitingEl.textContent = '战斗学院为您制作了一张海克斯卡牌留作纪念'
+  descEl.insertAdjacentElement('afterend', waitingEl)
+
   // 类型图片（新增）
   const imgEl = document.getElementById('result-image')
   if (imgEl) {
