@@ -1,4 +1,4 @@
-# 海克斯科技人格测试（HXTI）
+# 海克斯科研_人格测试（HXTI）
 
 科研不是人生全部，累了就当叠心之钢
 
@@ -53,8 +53,7 @@ npm run dev
 - 开源代码提供：https://github.com/pingfanfan（但本人进行了全面的修改）
 - 原创测试：B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183)（UID: 417038183）
 - 原版地址：[B站SBTI测试页面](https://www.bilibili.com/blackboard/era/WijKT2bWuCJWPg8B.html)
-- Hao W 提供部分创意灵感
-- Yue Y 文本修正，配色建议
+- My Friends
 - KIMI，ChatGPT
 
 ## 声明
