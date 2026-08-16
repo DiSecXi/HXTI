@@ -18,6 +18,7 @@ export function createQuiz(questions, config, onComplete) {
   let current = 0
   let answers = {}
   let isDrunk = false
+  let isLocked = false
 
   const els = {
     fill: document.getElementById('progress-fill'),
@@ -52,7 +53,7 @@ export function createQuiz(questions, config, onComplete) {
         btn.classList.add('selected')
       }
 
-      btn.addEventListener('click', () => selectOption(q, opt))
+      btn.addEventListener('click', () => selectOption(q, opt, btn))
       els.options.appendChild(btn)
     })
 
@@ -87,35 +88,44 @@ export function createQuiz(questions, config, onComplete) {
     }
   }
 
-  function selectOption(question, option) {
-    if (question.id === config.drinkGate.questionId) {
-      const hasDrinkGateQ2 = queue.some(q => q.id === 'drink_gate_q2')
-      const willTrigger = option.value === config.drinkGate.triggerValue
+  function selectOption(question, option, btnEl) {
+    if (isLocked) return
+    isLocked = true
 
-      if (hasDrinkGateQ2 && !willTrigger) {
-        queue = queue.filter(q => q.id !== 'drink_gate_q2')
-        isDrunk = false
-      } else if (!hasDrinkGateQ2 && willTrigger) {
-        queue = insertAfter(queue, question.id, drinkGateQ2)
+    if (btnEl) btnEl.classList.add('selected')
+
+    setTimeout(() => {
+      if (question.id === config.drinkGate.questionId) {
+        const hasDrinkGateQ2 = queue.some(q => q.id === 'drink_gate_q2')
+        const willTrigger = option.value === config.drinkGate.triggerValue
+
+        if (hasDrinkGateQ2 && !willTrigger) {
+          queue = queue.filter(q => q.id !== 'drink_gate_q2')
+          isDrunk = false
+        } else if (!hasDrinkGateQ2 && willTrigger) {
+          queue = insertAfter(queue, question.id, drinkGateQ2)
+        }
       }
-    }
 
-    for (let i = current + 1; i < queue.length; i++) {
-      delete answers[queue[i].id]
-    }
+      for (let i = current + 1; i < queue.length; i++) {
+        delete answers[queue[i].id]
+      }
 
-    answers[question.id] = option.value
+      answers[question.id] = option.value
 
-    if (question.id === 'drink_gate_q2') {
-      isDrunk = option.value === config.drinkGate.drunkTriggerValue
-    }
+      if (question.id === 'drink_gate_q2') {
+        isDrunk = option.value === config.drinkGate.drunkTriggerValue
+      }
 
-    current++
-    if (current >= totalCount()) {
-      onComplete(answers, isDrunk)
-    } else {
-      renderQuestion()
-    }
+      current++
+      if (current >= totalCount()) {
+        onComplete(answers, isDrunk)
+      } else {
+        renderQuestion()
+      }
+
+      isLocked = false
+    }, 200)
   }
 
   function start() {

@@ -167,7 +167,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* 未选中时的 hover */
+/* 未选中时的 hover —— 仅限桌面端 */
 @media (hover: hover) and (pointer: fine) {
   .btn-option:hover {
     border-color: var(--hex-silver);
@@ -176,14 +176,14 @@ body {
   }
 }
 
-/* 点击瞬间反馈 */
+/* 点击瞬间反馈（移动端 + 桌面端按下时） */
 .btn-option:active {
   background: rgba(168, 85, 247, 0.15);
   color: var(--hex-green);
   border-color: var(--hex-silver);
 }
 
-/* 选中状态：银白边框 + 紫色背景，且强制覆盖 hover/active */
+/* 选中状态：淡紫底 + 绿字，强制覆盖 hover/active */
 .btn-option.selected,
 .btn-option.selected:hover,
 .btn-option.selected:active {
