@@ -118,6 +118,30 @@ async function init() {
   if (xzgBtnResult) {
     xzgBtnResult.addEventListener('click', ding)
   }
+
+  // 分享区复制按钮
+  document.querySelectorAll('.btn-copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy
+      try {
+        await navigator.clipboard.writeText(text)
+        const original = btn.textContent
+        btn.textContent = '已复制！'
+        setTimeout(() => btn.textContent = original, 1500)
+      } catch (err) {
+        const ta = document.createElement('textarea')
+        ta.value = text
+        document.body.appendChild(ta)
+        ta.select()
+        document.execCommand('copy')
+        document.body.removeChild(ta)
+        const original = btn.textContent
+        btn.textContent = '已复制！'
+        setTimeout(() => btn.textContent = original, 1500)
+      }
+    })
+  })
+
 }
 
 init()
