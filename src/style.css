@@ -366,7 +366,7 @@ body {
 /* ========== Result Actions ========== */
 .result-actions {
   margin-top: 24px;
-  margin-bottom: 500px;        /* 新增：按钮下方再撑 60px */
+  margin-bottom: 200px;        /* 新增：按钮下方再撑 60px */
   display: flex;
   gap: 12px;
   justify-content: center;
