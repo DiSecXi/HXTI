@@ -81,14 +81,4 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
     `
     detailEl.appendChild(row)
   }*/
-
-  // 复制 AI Agent 命令
-  const btnAgent = document.getElementById('btn-agent')
-  btnAgent.onclick = () => {
-    const cmd = `git clone https://github.com/DiSecXi/HXTI.git && cd HXTI && npm install && npm run dev`
-    navigator.clipboard.writeText(cmd).then(() => {
-      btnAgent.textContent = '已复制!'
-      setTimeout(() => { btnAgent.textContent = '复制一键部署命令' }, 2000)
-    })
-  }
 }
