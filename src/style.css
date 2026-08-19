@@ -276,7 +276,7 @@ body {
 /* ========== Result ========== */
 .result-card {
   text-align: center;
-  padding: 32px 20px 500px;
+  padding: 32px 20px 100px;
 }
 
 .result-kicker {
@@ -366,6 +366,7 @@ body {
 /* ========== Result Actions ========== */
 .result-actions {
   margin-top: 24px;
+  margin-bottom: 60px;        /* 新增：按钮下方再撑 60px */
   display: flex;
   gap: 12px;
   justify-content: center;
