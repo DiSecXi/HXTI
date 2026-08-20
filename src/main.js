@@ -28,10 +28,10 @@ async function init() {
     window.scrollTo(0, 0)
   }
 
-  function onQuizComplete(answers, isDrunk) {
+  function onQuizComplete(answers, isVictim) {
     const scores = calcDimensionScores(answers, questions.main)
     const levels = scoresToLevels(scores, config.scoring.levelThresholds)
-    const result = determineResult(levels, dimensions.order, types.standard, types.special, { isDrunk })
+    const result = determineResult(levels, dimensions.order, types.standard, types.special, { isVictim })
     renderResult(result, levels, dimensions.order, dimensions.definitions, config)
     showPage('result')
   }

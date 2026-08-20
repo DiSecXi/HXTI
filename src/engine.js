@@ -76,7 +76,7 @@ export function matchType(userLevels, dimOrder, pattern) {
  * @param {Array}   dimOrder     维度顺序
  * @param {Array}   standardTypes 标准类型数组
  * @param {Array}   specialTypes  特殊类型数组
- * @param {Object}  options      { isDrunk: boolean }
+ * @param {Object}  options      { isVictim: boolean }
  * @returns {{ primary: Object, secondary: Object|null, rankings: Array, mode: string }}
  */
 export function determineResult(userLevels, dimOrder, standardTypes, specialTypes, options = {}) {
@@ -89,16 +89,16 @@ export function determineResult(userLevels, dimOrder, standardTypes, specialType
   rankings.sort((a, b) => a.distance - b.distance || b.exact - a.exact || b.similarity - a.similarity)
 
   const best = rankings[0]
-  const drunk = specialTypes.find((t) => t.code === 'VICT')
+  const Victim = specialTypes.find((t) => t.code === 'VICT')
   const hhhh = specialTypes.find((t) => t.code === 'EATER')
 
   // 受害者覆盖
-  if (options.isDrunk && drunk) {
+  if (options.isVictim && Victim) {
     return {
-      primary: { ...drunk, similarity: best.similarity, exact: best.exact },
+      primary: { ...Victim, similarity: best.similarity, exact: best.exact },
       secondary: best,
       rankings,
-      mode: 'drunk',
+      mode: 'Victim',
     }
   }
 

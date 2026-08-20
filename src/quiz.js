@@ -6,18 +6,18 @@ import { shuffle, insertAtRandom, insertAfter } from './utils.js'
 export function createQuiz(questions, config, onComplete) {
   // 按顺序出题，不再随机打乱
   const mainQuestions = [...questions.main]
-  const drinkGateQ1 = questions.special.find((q) => q.id === config.drinkGate.questionId)
-  const drinkGateQ2 = questions.special.find((q) => q.id === 'drink_gate_q2')
+  const victGateQ1 = questions.special.find((q) => q.id === config.victGate.questionId)
+  const victGateQ2 = questions.special.find((q) => q.id === 'vict_gate_q2')
 
   // 酒鬼门问题固定插入到第 5 题之后（索引 4 后面）
-  let queue = insertAfter(mainQuestions, mainQuestions[4]?.id, drinkGateQ1)
-  if (!queue.some(q => q.id === drinkGateQ1.id)) {
-    queue = [...mainQuestions, drinkGateQ1]
+  let queue = insertAfter(mainQuestions, mainQuestions[4]?.id, victGateQ1)
+  if (!queue.some(q => q.id === victGateQ1.id)) {
+    queue = [...mainQuestions, victGateQ1]
   }
 
   let current = 0
   let answers = {}
-  let isDrunk = false
+  let isVictim = false
   let isLocked = false
 
   const els = {
@@ -95,15 +95,15 @@ export function createQuiz(questions, config, onComplete) {
     if (btnEl) btnEl.classList.add('selected')
 
     setTimeout(() => {
-      if (question.id === config.drinkGate.questionId) {
-        const hasDrinkGateQ2 = queue.some(q => q.id === 'drink_gate_q2')
-        const willTrigger = option.value === config.drinkGate.triggerValue
+      if (question.id === config.victGate.questionId) {
+        const hasvictGateQ2 = queue.some(q => q.id === 'vict_gate_q2')
+        const willTrigger = option.value === config.victGate.triggerValue
 
-        if (hasDrinkGateQ2 && !willTrigger) {
-          queue = queue.filter(q => q.id !== 'drink_gate_q2')
-          isDrunk = false
-        } else if (!hasDrinkGateQ2 && willTrigger) {
-          queue = insertAfter(queue, question.id, drinkGateQ2)
+        if (hasvictGateQ2 && !willTrigger) {
+          queue = queue.filter(q => q.id !== 'vict_gate_q2')
+          isVictim = false
+        } else if (!hasvictGateQ2 && willTrigger) {
+          queue = insertAfter(queue, question.id, victGateQ2)
         }
       }
 
@@ -113,13 +113,13 @@ export function createQuiz(questions, config, onComplete) {
 
       answers[question.id] = option.value
 
-      if (question.id === 'drink_gate_q2') {
-        isDrunk = option.value === config.drinkGate.drunkTriggerValue
+      if (question.id === 'vict_gate_q2') {
+        isVictim = option.value === config.victGate.VictimTriggerValue
       }
 
       current++
       if (current >= totalCount()) {
-        onComplete(answers, isDrunk)
+        onComplete(answers, isVictim)
       } else {
         renderQuestion()
       }
@@ -131,12 +131,12 @@ export function createQuiz(questions, config, onComplete) {
   function start() {
     current = 0
     answers = {}
-    isDrunk = false
+    isVictim = false
     // 按顺序重置队列
     const resetMain = [...questions.main]
-    let newQueue = insertAfter(resetMain, resetMain[4]?.id, drinkGateQ1)
-    if (!newQueue.some(q => q.id === drinkGateQ1.id)) {
-      newQueue = [...resetMain, drinkGateQ1]
+    let newQueue = insertAfter(resetMain, resetMain[4]?.id, victGateQ1)
+    if (!newQueue.some(q => q.id === victGateQ1.id)) {
+      newQueue = [...resetMain, victGateQ1]
     }
     queue = newQueue
     renderQuestion()

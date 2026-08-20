@@ -303,27 +303,27 @@
   ],
   "special": [
     {
-      "id": "drink_gate_q1",
+      "id": "vict_gate_q1",
       "special": true,
-      "kind": "drink_gate",
+      "kind": "vict_gate",
       "text": "在金瓜种植技术课题组中，你觉得自己更像哪种角色？",
       "options": [
         { "label": "螺丝钉，哪里需要往哪拧。", "value": 1 },
         { "label": "小太阳，主要负责给大家带来正能量。", "value": 2 },
         { "label": "透明人，没什么人注意到我，但杂活干了不少。", "value": 3 }
       ],
-      "behavior": "Always shown at random position. If value 3 (透明人) , drink_gate_q2 is inserted after."
+      "behavior": "Always shown at random position. If value 3 (透明人) , vict_gate_q2 is inserted after."
     },
     {
-      "id": "drink_gate_q2",
+      "id": "vict_gate_q2",
       "special": true,
-      "kind": "drink_trigger",
+      "kind": "vict_trigger",
       "text": "如果现在给你一个机会大声说出心里话，你会说？",
       "options": [
         { "label": "老师/领导，我想毕业/这工作太难了，找人带带我吧。", "value": 1 },
         { "label": "为什么脏活累活全是我？凭什么我这么惨，能不能放过我！", "value": 2 }
       ],
-      "behavior": "Only shown if drink_gate_q1 == 3. If value 2 selected, VICT hidden personality is activated."
+      "behavior": "Only shown if vict_gate_q1 == 3. If value 2 selected, VICT hidden personality is activated."
     }
   ]
 }

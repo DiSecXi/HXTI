@@ -50,11 +50,12 @@ npm run dev
 
 ## 致谢
 
-- 开源代码提供：https://github.com/pingfanfan（但本人进行了全面的修改）
-- 原创测试：B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183)（UID: 417038183）
-- 原版地址：[B站SBTI测试页面](https://www.bilibili.com/blackboard/era/WijKT2bWuCJWPg8B.html)
 - My Friends
 - KIMI，ChatGPT
+- 开源代码提供：https://github.com/pingfanfan（本人进行了全面的修改）
+- 原创测试：B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183)（UID: 417038183）
+- 原版地址：[B站SBTI测试页面](https://www.bilibili.com/blackboard/era/WijKT2bWuCJWPg8B.html)
+
 
 ## 声明
 
@@ -63,8 +64,9 @@ npm run dev
 并基于https://github.com/pingfanfan 的SBTI开源项目，但本人进行了全面修改，包括：问题内容，人格内容，计算方式，UI样式，交互方式等。
 
 ## 备注
-第5/31题是固定插入题目中的，如果选择透明人，则还会被插入第6/32题，但是在回测时应该忽略第5/31题以及第6/32题，并且如果第5/31题没有选择小透明，则第6/32题不会出现，而且在回测中仍然要忽略第5/31题。
 
+- 点击心之钢可以叠钢
+- 存在隐藏角色及隐藏卡牌
 
 ## License
 

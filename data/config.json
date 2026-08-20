@@ -19,9 +19,9 @@
     "author": "夏洛克量化（B站UP主@夏洛克量化 (UID 3707036038596736)）",
     "funNote": "量子化学计算与文章专利辅助 请联系B站UP主@夏洛克量化 (UID 3707036038596736)，或添加微信：Quantum_Chemistry_SH"
     },
-  "drinkGate": {
-    "questionId": "drink_gate_q1",
+  "victGate": {
+    "questionId": "vict_gate_q1",
     "triggerValue": 3,
-    "drunkTriggerValue": 2
+    "VictimTriggerValue": 2
   }
 }

@@ -239,7 +239,7 @@
       "cn": "受害者",
       "intro": "为什么又是我……",
       "desc": "很遗憾，您测出了战斗学院最被低估的隐藏职业——【VICT - 受害者】。您可能觉得自己是峡谷的“三无人员”——没资源、没大腿、没存在感。脏活是您的，烂摊子是您的，但MVP总是和您玩捉迷藏。可是您知道吗？没有您默默补上的那些视野、收拾的那些残局、顶上的那些伤害，这个团队可能早就散架了。您是峡谷的暗物质——看不见，但少了您，整个地图的运转规律都得改写。您每天依然出现在泉水里，这件事本身就值得一枚勋章。那些辉煌的团战集锦，不是建在云端的，是建在您这样一块块沉默的基石上的。这个世界可能暂时欠您一个MVP，但您欠自己的，是一个理直气壮的肯定。您不是受害者，您是还没被看见的Carry。继续苟住，属于您的版本更新，正在下载中。",
-      "trigger": "Hidden personality activated when drink_gate_q2 == 2",
+      "trigger": "Hidden personality activated when vict_gate_q2 == 2",
       "note": "Overrides normal matching; best normal match shown as secondary",
       "image": "/HXTI/images/img-30-VICT.png"
     },
