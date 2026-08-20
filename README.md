@@ -81,18 +81,16 @@ git push origin main
 
 ## 致谢
 
-- My Friends
-- KIMI，ChatGPT
-- 开源代码提供：https://github.com/pingfanfan（本人进行了全面的修改）
-- 原创测试：B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183)（UID: 417038183）
-- 原版地址：[B站SBTI测试页面](https://www.bilibili.com/blackboard/era/WijKT2bWuCJWPg8B.html)
-
+- 向参与内测的朋友们表达诚挚的谢意！
+- 感谢KIMI，ChatGPT等AI提供技术支持！
 
 ## 声明
 
-本测试仅供娱乐，请勿用于任何严肃场景。本项目为开源二创，如有侵权请联系删除。
-本项目完全开源，基于 B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183) 的原创测试。
-并基于https://github.com/pingfanfan 的SBTI开源项目，但本人进行了全面修改，包括：问题内容，人格内容，计算方式，UI样式，交互方式等。
+- 本测试仅供娱乐，请勿用于任何严肃场景。
+- 本项目为开源二创，如有侵权请联系删除。
+- 原始开源代码：https://github.com/pingfanfan（本人进行了全盘大量修改）
+- 原创测试：B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183)（UID: 417038183）
+- 原版测试地址：[B站SBTI测试页面](https://www.bilibili.com/blackboard/era/WijKT2bWuCJWPg8B.html)
 
 ## 备注
 
