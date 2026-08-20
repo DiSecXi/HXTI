@@ -40,11 +40,42 @@
 git clone https://github.com/DiSecXi/HXTI.git
 cd HXTI
 
+# 可能的中间步骤
+
+# 清理旧安装
+rm -rf node_modules package-lock.json   
+
+# 安装 nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# 重启终端或加载配置
+source ~/.bashrc
+
+# 安装 Node 20（LTS 长期支持版）
+nvm install 20
+
+# 使用 Node 20
+nvm use 20
+
+# 验证
+node -v   # 应显示 v20.x.x
+
 # 安装依赖
 npm install
 
 # 启动开发服务器
 npm run dev
+
+# WSL系统中进入本地目录
+cd /mnt/此处填写你在windows系统中保存的目录/HXTI
+
+#推送至Github仓库
+git add .
+git commit -m "此处添加修改内容的概述"
+git push origin main
+
+根据提示填写你的git用户名及相应的key
+
 ```
 中间产生的任何报错直接问AI就能解决
 
