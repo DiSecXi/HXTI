@@ -88,7 +88,7 @@ git push origin main
 
 - 本测试仅供娱乐，请勿用于任何严肃场景。
 - 本项目为开源二创，如有侵权请联系删除。
-- 原始开源代码：https://github.com/pingfanfan（本人进行了全盘大量修改）
+- 原始开源代码（本人进行了全盘大量修改）：https://github.com/pingfanfan
 - 原创测试：B站UP主 [@蛆肉儿串儿](https://space.bilibili.com/417038183)（UID: 417038183）
 - 原版测试地址：[B站SBTI测试页面](https://www.bilibili.com/blackboard/era/WijKT2bWuCJWPg8B.html)
 
