@@ -251,6 +251,16 @@
       "trigger": "Fallback when best match similarity < 60%",
       "note": "No pattern - catch-all type",
       "image": "/HXTI/images/img-31-EATER.png"
+    },
+
+    {
+      "code": "JOKER",
+      "cn": "学术导演",
+      "intro": "拍科幻片可比拍纪录片赚钱",
+      "desc": "恭喜您，您测出了战斗学院最懂拍电影的隐藏职业——【JOKER - 学术导演】。学术导演就是祖安那个给瓜皮刷黄漆冒充金瓜蛋子的狠人，也是真实世界中那个发现数据对不上就「微调」一下坐标轴、发现实验做不出来就「优化」一下统计方法的学术小丑。（叠个甲）导演本身是一个高尚的职业，我们都很尊敬著名导演（叠甲完毕），但是当导演不好好拍电影，转而开始研究学术论文时，问题就变了。其实学术导演们脑子里装着一套完整的「评委心理学」：评委们知道是假的吗？也许知道，但他们能看出来吗？肯定看不出来。\n\n他们看不出来就说明我电影拍的不错。\n\n他们这不是种瓜技术造假，他们实际上是掌握了「结果导向型科研」的逆时光技术。当别人还在实验室里苦哈哈地研究金瓜种植技术时，他们已经拎着油漆桶站在瓜棚门口，思考刷哑光还是亮光了。他们的座右铭是：「如果评委的审稿标准比我的道德底线还低，那我的道德底线就是行业标准。」\n\n但说真的，在这个连心之钢都能叠的世界里，除了平行宇宙的耿同学，谁还在乎那层漆是不是真金？毕竟，外界早就知道祖安人是什么德行。",
+      "trigger": "Hidden personality activated when joker_gate_q2 == 2",
+      "note": "Overrides normal matching; best normal match shown as secondary",
+      "image": "/HXTI/images/img-32-Joker.png"
     }
   ]
 }

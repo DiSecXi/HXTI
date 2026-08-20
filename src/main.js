@@ -28,10 +28,10 @@ async function init() {
     window.scrollTo(0, 0)
   }
 
-  function onQuizComplete(answers, isVictim) {
+    function onQuizComplete(answers, { isVictim, isJoker }) {
     const scores = calcDimensionScores(answers, questions.main)
     const levels = scoresToLevels(scores, config.scoring.levelThresholds)
-    const result = determineResult(levels, dimensions.order, types.standard, types.special, { isVictim })
+    const result = determineResult(levels, dimensions.order, types.standard, types.special, { isVictim, isJoker })
     renderResult(result, levels, dimensions.order, dimensions.definitions, config)
     showPage('result')
   }
@@ -117,6 +117,25 @@ async function init() {
   const xzgBtnResult = document.getElementById('btn-xinzhigang-result')
   if (xzgBtnResult) {
     xzgBtnResult.addEventListener('click', ding)
+  }
+
+    const btnCopyIntroWx = document.getElementById('btn-copy-intro-wx')
+  if (btnCopyIntroWx) {
+    btnCopyIntroWx.addEventListener('click', async () => {
+      const wx = 'Quantum_Chemistry_SH'
+      try {
+        await navigator.clipboard.writeText(wx)
+        alert('微信号已复制：' + wx)
+      } catch (err) {
+        const ta = document.createElement('textarea')
+        ta.value = wx
+        document.body.appendChild(ta)
+        ta.select()
+        document.execCommand('copy')
+        document.body.removeChild(ta)
+        alert('微信号已复制：' + wx)
+      }
+    })
   }
 
   // 分享区复制按钮

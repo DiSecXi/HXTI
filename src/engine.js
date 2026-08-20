@@ -76,7 +76,7 @@ export function matchType(userLevels, dimOrder, pattern) {
  * @param {Array}   dimOrder     维度顺序
  * @param {Array}   standardTypes 标准类型数组
  * @param {Array}   specialTypes  特殊类型数组
- * @param {Object}  options      { isVictim: boolean }
+ * @param {Object}  options      { isVictim: boolean, isJoker: boolean }
  * @returns {{ primary: Object, secondary: Object|null, rankings: Array, mode: string }}
  */
 export function determineResult(userLevels, dimOrder, standardTypes, specialTypes, options = {}) {
@@ -90,9 +90,20 @@ export function determineResult(userLevels, dimOrder, standardTypes, specialType
 
   const best = rankings[0]
   const Victim = specialTypes.find((t) => t.code === 'VICT')
+  const Joker = specialTypes.find((t) => t.code === 'JOKER')
   const hhhh = specialTypes.find((t) => t.code === 'EATER')
 
-  // 受害者覆盖
+  // ========== JOKER 优先级最高 ==========
+  if (options.isJoker && Joker) {
+    return {
+      primary: { ...Joker, similarity: best.similarity, exact: best.exact },
+      secondary: best,
+      rankings,
+      mode: 'joker',
+    }
+  }
+
+  // ========== VICT 覆盖 ==========
   if (options.isVictim && Victim) {
     return {
       primary: { ...Victim, similarity: best.similarity, exact: best.exact },
@@ -102,7 +113,7 @@ export function determineResult(userLevels, dimOrder, standardTypes, specialType
     }
   }
 
-  // 傻乐者兜底
+  // ========== 傻乐者兜底 ==========
   if (best.similarity < 60 && hhhh) {
     return {
       primary: { ...hhhh, similarity: best.similarity, exact: best.exact },

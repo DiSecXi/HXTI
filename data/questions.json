@@ -312,7 +312,7 @@
         { "label": "小太阳，主要负责给大家带来正能量。", "value": 2 },
         { "label": "透明人，没什么人注意到我，但杂活干了不少。", "value": 3 }
       ],
-      "behavior": "Always shown at random position. If value 3 (透明人) , vict_gate_q2 is inserted after."
+      "behavior": "If value 3 (透明人) , vict_gate_q2 is inserted after."
     },
     {
       "id": "vict_gate_q2",
@@ -324,6 +324,32 @@
         { "label": "为什么脏活累活全是我？凭什么我这么惨，能不能放过我！", "value": 2 }
       ],
       "behavior": "Only shown if vict_gate_q1 == 3. If value 2 selected, VICT hidden personality is activated."
+    },
+
+    {
+      "id": "joker_gate_q1",
+      "special": true,
+      "kind": "joker_gate",
+      "text": "你认为金瓜栽培技术如何取得进展？",
+      "options": [
+        { "label": "调整化肥成分，科学培育，一定能种出金瓜。", "value": 1 },
+        { "label": "不可能取得进展，让植物细胞吸收金元素并且只还原在瓜皮和瓜粒子表面简直就是天方夜谭。", "value": 2 },
+        { "label": "祖安那帮人通过给瓜皮子刷漆“实现了”这个技术，我看看是不是油漆成分有什么问题。", "value": 3 }
+      ],
+      "behavior": "If value 3 (刷漆), joker_gate_q2 is inserted after."
+    },
+    
+    {
+      "id": "joker_gate_q2",
+      "special": true,
+      "kind": "joker_trigger",
+      "text": "发现祖安人用的就是普通油漆，实锤造假（经调查，是实锤造假，不是锤石造假），骗取大量经费，研究他们的转基因技术，你怎么看？",
+      "options": [
+        { "label": "必须举报，还祖安一个朗朗乾坤。", "value": 1 },
+        { "label": "这也可以？毕竟评委管的松，只要能拿到经费，我也想试试！", "value": 2 }
+      ],
+      "behavior": "Only shown if joker_gate_q1 == 3. If value 2 selected, JOKER hidden personality is activated."
     }
+
   ]
 }

@@ -12,7 +12,8 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
 
   // Kicker
   const kicker = document.getElementById('result-kicker')
-  if (mode === 'Victim') kicker.textContent = '隐藏人格已激活'
+  if (mode === 'joker') kicker.textContent = '隐藏人格已激活'
+  else if (mode === 'Victim') kicker.textContent = '隐藏人格已激活'
   else if (mode === 'fallback') kicker.textContent = '系统强制兜底'
   else kicker.textContent = '你的主类型'
 
