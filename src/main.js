@@ -161,8 +161,8 @@ async function init() {
     })
   })
 
-  // ========== 随机抽卡 ==========
-    const cardImages = [
+    // ========== 随机抽卡（三张） ==========
+  const cardImages = [
     './images/img-1-PUA-er.png',
     './images/img-2-COW.png',
     './images/img-3-GRIND.png',
@@ -197,15 +197,32 @@ async function init() {
     './images/img-32-Joker.png'
   ]
 
-  const hexCardImg = document.getElementById('hex-card-img')
+  const hexCardImgs = [
+    document.getElementById('hex-card-img-1'),
+    document.getElementById('hex-card-img-2'),
+    document.getElementById('hex-card-img-3')
+  ]
   const btnRoll = document.getElementById('btn-roll')
 
-  if (hexCardImg && btnRoll) {
-    // 进入结果页时先随机一张
-    hexCardImg.src = cardImages[Math.floor(Math.random() * cardImages.length)]
+  function getRandomCards(count) {
+    const pool = [...cardImages]
+    const result = []
+    for (let i = 0; i < count; i++) {
+      const idx = Math.floor(Math.random() * pool.length)
+      result.push(pool.splice(idx, 1)[0])
+    }
+    return result
+  }
 
+  if (hexCardImgs.every(img => img) && btnRoll) {
+    // 初始化三张
+    const initial = getRandomCards(3)
+    hexCardImgs.forEach((img, i) => img.src = initial[i])
+
+    // Roll 按钮
     btnRoll.addEventListener('click', () => {
-      hexCardImg.src = cardImages[Math.floor(Math.random() * cardImages.length)]
+      const rolled = getRandomCards(3)
+      hexCardImgs.forEach((img, i) => img.src = rolled[i])
     })
   }
 
