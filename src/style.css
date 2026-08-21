@@ -591,3 +591,35 @@ a {
   display: inline-block;
   text-align: center;
 }
+
+/* ========== 随机抽卡 ========== */
+.hex-card-draw {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.hex-card-title {
+  color: var(--hex-gold);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.hex-card-img {
+  display: block;
+  max-width: 72%;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.25);
+}
+
+#btn-roll {
+  margin-top: 4px;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}

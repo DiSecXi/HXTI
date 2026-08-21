@@ -51,12 +51,15 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
   }
   // 次要匹配
   const secEl = document.getElementById('result-secondary')
-  if (secondary && (mode === 'Victim' || mode === 'fallback')) {
-    secEl.style.display = ''
-    document.getElementById('secondary-info').textContent =
-      `${secondary.code}（${secondary.cn}）· 匹配度 ${secondary.similarity}%`
-  } else {
-    secEl.style.display = 'none'
+  if (secEl) {
+    if (secondary && (mode === 'drunk' || mode === 'fallback' || mode === 'joker')) {
+      secEl.style.display = ''
+      const secInfo = document.getElementById('secondary-info')
+      if (secInfo) secInfo.textContent =
+        `${secondary.code}（${secondary.cn}）· 匹配度 ${secondary.similarity}%`
+    } else {
+      secEl.style.display = 'none'
+    }
   }
 
   // 雷达图

@@ -161,6 +161,54 @@ async function init() {
     })
   })
 
+  // ========== 随机抽卡 ==========
+    const cardImages = [
+    './images/img-1-PUA-er.png',
+    './images/img-2-COW.png',
+    './images/img-3-GRIND.png',
+    './images/img-4-NERD.png',
+    './images/img-5-SNAKE.png',
+    './images/img-6-ROOKIE.png',
+    './images/img-7-BOSS.png',
+    './images/img-8-VETERAN.png',
+    './images/img-9-COPY.png',
+    './images/img-10-LUCKY.png',
+    './images/img-11-REVIEW-er.png',
+    './images/img-12-BOOM.png',
+    './images/img-13-GMBL.png',
+    './images/img-14-PASS.png',
+    './images/img-15-TAILOR.png',
+    './images/img-16-TECH.png',
+    './images/img-17-YODA.png',
+    './images/img-18-SQUID.png',
+    './images/img-19-GOURD.png',
+    './images/img-20-INDEED.png',
+    './images/img-21-MEMER.png',
+    './images/img-22-FAKER.png',
+    './images/img-23-BALANCE.png',
+    './images/img-24-IMPO.png',
+    './images/img-25-BABY.png',
+    './images/img-26-GHOST.png',
+    './images/img-27-SOCL.png',
+    './images/img-28-MUM-Like.png',
+    './images/img-29-AI.png',
+    './images/img-30-VICT.png',
+    './images/img-31-EATER.png',
+    './images/img-32-Joker.png'
+  ]
+
+  const hexCardImg = document.getElementById('hex-card-img')
+  const btnRoll = document.getElementById('btn-roll')
+
+  if (hexCardImg && btnRoll) {
+    // 进入结果页时先随机一张
+    hexCardImg.src = cardImages[Math.floor(Math.random() * cardImages.length)]
+
+    btnRoll.addEventListener('click', () => {
+      hexCardImg.src = cardImages[Math.floor(Math.random() * cardImages.length)]
+    })
+  }
+
 }
 
 init()
